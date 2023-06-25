@@ -5,6 +5,7 @@ import cv2 as cv
 import numpy as np
 import tempfile
 import time
+from streamlit_webrtc import VideoTransformerBase, webrtc_streamer
 from PIL import Image
 
 DEMO_IMAGE = 'demo/demo.jpg'
@@ -36,7 +37,7 @@ st.sidebar.subheader('Parameter')
 ## Define available pages in selection box
 app_mode = st.sidebar.selectbox(
     'App Mode',
-    ['About','Image','Video','Webcam']
+    ['About','Image','Video','Webcam', 'Test']
 )
 
 # Resize Images to fit Container
@@ -318,3 +319,10 @@ elif app_mode == 'Webcam':
         FRAME_WINDOW.image(frame)
     else:
         st.write('Stopped')
+
+elif app_mode == 'Test':
+    # def video_frame_callback(frame):
+    #     img = frame.to_ndarray(format="bgr24")
+    webrtc_streamer(key="sample")
+    # webrtc_streamer(key="example", video_frame_callback=video_frame_callback)
+    
