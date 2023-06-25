@@ -4,4 +4,6 @@ altair
 opencv-python
 streamlit
 mediapipe
+av
+aiortc==1.1.1
 streamlit-webrtc
