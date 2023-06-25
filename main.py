@@ -323,10 +323,7 @@ elif app_mode == 'Webcam':
 
 elif app_mode == 'Test':
     st.title("Kevin Test Streamlit webrtc")
-    # def video_frame_callback(frame):
-    #     img = frame.to_ndarray(format="bgr24")
     webrtc_streamer(key="sample")
-    # webrtc_streamer(key="example", video_frame_callback=video_frame_callback)
 
 elif app_mode == 'Test2':
     st.title("Kevin Test Streamlit webrtc 2")
@@ -334,5 +331,4 @@ elif app_mode == 'Test2':
         img = frame.to_ndarray(format="bgr24")
         flipped = img[::-1,:,:]
         return av.VideoFrame.from_ndarray(flipped, format="bgr24")
-
     webrtc_streamer(key="example", video_frame_callback=video_frame_callback)
