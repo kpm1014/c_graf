@@ -226,7 +226,7 @@ elif app_mode == 'Video':
     fps_input = int(video.get(cv.CAP_PROP_FPS))
 
     ## Recording
-    codec = cv.VideoWriter_fourcc('a','v','c','1')
+    codec = cv.VideoWriter_fourcc(*"mp4v")
     out = cv.VideoWriter('output1.mp4', codec, fps_input, (width,height))
 
     st.sidebar.text('Input Video')
