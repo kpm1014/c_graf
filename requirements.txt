@@ -1,0 +1,6 @@
+numpy
+Pillow
+altair
+opencv-python
+streamlit
+mediapipe
